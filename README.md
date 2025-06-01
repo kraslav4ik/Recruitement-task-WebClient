@@ -31,20 +31,24 @@
 
 3. **Configure parameters if needed**
 
-    **You can**
-    1. Fetch comments with posts
-    2. Specify output directory
-    3. Provide default URL if needed
+   **You can:**
+   1. Fetch comments along with posts
+   2. Specify an output directory
+   3. Provide a custom API URL if needed
 
-    **Example**
+**Example:**
+```bash
+./mvnw exec:java -Dexec.mainClass="com.example.Main" \
+    -DfetchComments=true \
+    -DoutputDir="output_dir_name" \
+    -DapiUrl="https://jsonplaceholder.typicode.com/"
+```
 
-  ```bash
-  ./mvnw exec:java -Dexec.mainClass="com.example.Main" -DfetchComments=true -DoutputDir="output_dir_name" -DapiUrl="https://jsonplaceholder.typicode.com/"
-  ```
-
-    **Default confg**
-
-  ```bash
-  ./mvnw exec:java -Dexec.mainClass="com.example.Main" -DfetchComments=false -DoutputDir="output" -DapiUrl="https://jsonplaceholder.typicode.com/"
-  ```
+**Default config:**
+```bash
+./mvnw exec:java -Dexec.mainClass="com.example.Main" \
+    -DfetchComments=false \
+    -DoutputDir="output" \
+    -DapiUrl="https://jsonplaceholder.typicode.com/"
+```
 
