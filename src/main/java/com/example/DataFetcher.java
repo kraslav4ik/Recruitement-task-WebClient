@@ -48,7 +48,7 @@ class DataFetcher {
                 .stream()
                 .collect(Collectors.groupingBy(Comment::postId));
 
-        posts.forEach(post -> post.comments().addAll(comments.get(post.id())));
+        posts.forEach(post -> post.comments().addAll(comments.getOrDefault(post.id(), List.of())));
         return posts;
     }
 

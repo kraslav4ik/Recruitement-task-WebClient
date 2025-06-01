@@ -16,8 +16,8 @@ class DataWriter {
         this.mapper = mapper;
     }
 
-    public void writeData(Collection<Post> posts, boolean addCommentsToJson) throws IOException {
-        File outDir = new File("output");
+    public void writeData(Collection<Post> posts, boolean addCommentsToJson, String outputDir) throws IOException {
+        File outDir = new File(outputDir);
         if (!outDir.exists()) {
             Files.createDirectories(outDir.toPath());
         }
